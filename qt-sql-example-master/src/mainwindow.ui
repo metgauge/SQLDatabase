@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1277</width>
-    <height>811</height>
+    <height>900</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,7 +19,7 @@
   <property name="minimumSize">
    <size>
     <width>1265</width>
-    <height>800</height>
+    <height>850</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -691,9 +691,9 @@ font: 12pt &quot;Agency FB&quot;;</string>
        <item>
         <widget class="QPushButton" name="buttton_Exit">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>1</horstretch>
+           <verstretch>1</verstretch>
           </sizepolicy>
          </property>
          <property name="text">
@@ -742,55 +742,6 @@ font: 12pt &quot;Agency FB&quot;;</string>
         <property name="verticalSpacing">
          <number>0</number>
         </property>
-        <item row="9" column="0">
-         <widget class="QLabel" name="label_StatOldBillet">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Statistic of all Order Billets</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="label_Table">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-            <horstretch>1</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Current Table:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="13" column="0" rowspan="2">
-         <widget class="QTableView" name="tableView_database_table_old">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
-            <horstretch>1</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="1">
-         <widget class="QLabel" name="label_OldTabel">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>1</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Older Table:</string>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="5">
          <widget class="QPushButton" name="button_show_table">
           <property name="sizePolicy">
@@ -804,6 +755,19 @@ font: 12pt &quot;Agency FB&quot;;</string>
           </property>
           <property name="autoDefault">
            <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_Statistic">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Statistic of the current Billet</string>
           </property>
          </widget>
         </item>
@@ -830,13 +794,6 @@ font: 12pt &quot;Agency FB&quot;;</string>
           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
            <bool>false</bool>
           </attribute>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_Raw">
-          <property name="text">
-           <string>Raw Data</string>
-          </property>
          </widget>
         </item>
         <item row="13" column="1" colspan="5">
@@ -905,149 +862,11 @@ font: 12pt &quot;Agency FB&quot;;</string>
           </column>
          </widget>
         </item>
-        <item row="14" column="1" colspan="5">
-         <widget class="QTableWidget" name="tableWidget_Static_old">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-            <horstretch>14</horstretch>
-            <verstretch>12</verstretch>
-           </sizepolicy>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_Raw">
+          <property name="text">
+           <string>Raw Data</string>
           </property>
-          <row>
-           <property name="text">
-            <string>Actual</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Mininum</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Average</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Maximum</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Std. Dev.</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string># Values</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>In WL</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Out WL</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Upper WL</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Lower WL</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>In TL</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Out TL</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Upper TL</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Lower TL</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Peaks</string>
-           </property>
-          </row>
-          <column>
-           <property name="text">
-            <string>Axis 1</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Axis 2</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Axis 3</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Axis 4</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Axis 5</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Axis 6</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>All Axis Ave.</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Ovality</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Min</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Max</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Temp.</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Cross Area</string>
-           </property>
-          </column>
          </widget>
         </item>
         <item row="3" column="1" colspan="5">
@@ -1133,6 +952,49 @@ font: 12pt &quot;Agency FB&quot;;</string>
           </column>
          </widget>
         </item>
+        <item row="13" column="0" rowspan="2">
+         <widget class="QTableView" name="tableView_database_table_old">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLabel" name="label_OldTabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Older Table:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_RawOld">
+          <property name="text">
+           <string>Raw Data</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="label_StatOldBillet">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Statistic of all Order Billets</string>
+          </property>
+         </widget>
+        </item>
         <item row="2" column="2" colspan="3">
          <widget class="QComboBox" name="comboBox_table_name">
           <property name="sizePolicy">
@@ -1152,43 +1014,6 @@ font: 12pt &quot;Agency FB&quot;;</string>
             <width>130</width>
             <height>0</height>
            </size>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="5">
-         <widget class="QPushButton" name="button_show_table_old">
-          <property name="text">
-           <string>Show</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="0">
-         <widget class="QLabel" name="label_RawOld">
-          <property name="text">
-           <string>Raw Data</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="2" colspan="3">
-         <widget class="QComboBox" name="comboBox_table_name_old">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-            <horstretch>10</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_Statistic">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Statistic of the current Billet</string>
           </property>
          </widget>
         </item>
@@ -1345,6 +1170,181 @@ font: 12pt &quot;Agency FB&quot;;</string>
             <string>Cross Area</string>
            </property>
           </column>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_Table">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Current Table:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="14" column="1" colspan="5">
+         <widget class="QTableWidget" name="tableWidget_Static_old">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>14</horstretch>
+            <verstretch>12</verstretch>
+           </sizepolicy>
+          </property>
+          <row>
+           <property name="text">
+            <string>Actual</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Mininum</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Average</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Maximum</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Std. Dev.</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string># Values</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>In WL</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Out WL</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Upper WL</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Lower WL</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>In TL</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Out TL</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Upper TL</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Lower TL</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Peaks</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Axis 1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Axis 2</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Axis 3</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Axis 4</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Axis 5</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Axis 6</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>All Axis Ave.</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Ovality</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Min</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Max</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Temp.</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Cross Area</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="10" column="2" colspan="3">
+         <widget class="QComboBox" name="comboBox_table_name_old">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="5">
+         <widget class="QPushButton" name="button_show_table_old">
+          <property name="text">
+           <string>Show</string>
+          </property>
          </widget>
         </item>
        </layout>

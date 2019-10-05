@@ -28,8 +28,9 @@ SQLWindow::SQLWindow(QWidget* parent, DbController* dbc, QThread* dbt) :
 
     ui->radio_mysql->setEnabled(sql_drivers.contains("QMYSQL"));
     ui->radio_mssql->setEnabled(sql_drivers.contains("QODBC"));
+    ui->radio_mssql->setEnabled(sql_drivers.contains("QPSQL"));
 
-    if (!sql_drivers.contains("QMYSQL") && !sql_drivers.contains("QODBC"))
+    if (!sql_drivers.contains("QMYSQL") && !sql_drivers.contains("QODBC") && !sql_drivers.contains("QPSQL"))
         ui->groupBox_sql_connect->setEnabled(false);
 
     //set timer for the storage status update
@@ -51,6 +52,7 @@ SQLWindow::SQLWindow(QWidget* parent, DbController* dbc, QThread* dbt) :
     connect(ui->button_ImportCSV_2_axis, SIGNAL(clicked()), this, SLOT(getCSVroute()));
     connect(ui->button_dump, SIGNAL(clicked()), this, SLOT(dumpDb()));
     connect(ui->button_delete_data, SIGNAL(clicked()), this, SLOT(deleteDatabase()));
+    connect(ui->buttton_Exit, SIGNAL(clicked()), this, SLOT(close()));
     connect(this, SIGNAL(setFileNum(int)), this, SLOT(initProcessDialog(int)));
     connect(timer, SIGNAL(timeout()), this, SLOT(storageStatus()));
 
@@ -76,48 +78,6 @@ SQLWindow::SQLWindow(QWidget* parent, DbController* dbc, QThread* dbt) :
     connect(db_controller, SIGNAL(tableSelected_old(QSqlQueryModel*, QStringList)), this, SLOT(displayTable_old(QSqlQueryModel*,QStringList)));
     connect(db_controller, SIGNAL(gotTablesNames(QStringList)), this, SLOT(fillTablesNames(QStringList)));
     connect(db_controller, SIGNAL(updateCurNum(int)), this, SLOT(updateProcessDialog(int)));
-
-
-
-    QString inifile("config.ini");
-    QFileInfo check_file(inifile);
-    if (check_file.exists() && check_file.isFile())
-    {
-        QSettings settings(inifile, QSettings::IniFormat);
-
-        QString engine = settings.value("sql/engine", "").toString();
-        if (engine == "mysql")
-        {
-            ui->radio_mysql->setChecked(true);
-            ui->radio_windows_authentication->setEnabled(false);
-            ui->lineEdit_driver->setEnabled(false);
-        }
-        else if (engine == "mssql")
-        {
-            ui->radio_mssql->setChecked(true);
-        }
-        else if (engine == "postsql")
-        {
-            ui->radio_Postsql->setChecked(true);
-        }
-
-        ui->lineEdit_driver->setText(settings.value("sql/driver", "").toString());
-        ui->lineEdit_server_address->setText(settings.value("sql/address", "").toString());
-        ui->spinBox_server_port->setValue(settings.value("sql/port", 0).toInt());
-        QString auth = settings.value("sql/authentication", "").toString();
-        ui->radio_sql_authentication->setChecked(auth == "server" && (engine == "mssql" || engine == "mysql"));
-        ui->radio_windows_authentication->setChecked(auth == "windows" && engine == "mssql");
-        ui->lineEdit_login->setText(settings.value("sql/login", "").toString());
-        ui->lineEdit_password->setText(settings.value("sql/password", "").toString()); // plain text, so secure...
-        ui->lineEdit_database_name->setText(settings.value("sql/database", "").toString());
-
-        ui->statusBar->showMessage("Settings file config.ini loaded", 3000);
-    }
-    else
-    {
-        ui->statusBar->showMessage("Settings file config.ini does not exist", 5000);
-    }
-
 
 }
 

@@ -1,17 +1,10 @@
 # Qt SQL Example
-
-An exemplary [Qt](https://www.qt.io/) app that connects to SQL server and displays a table from a database. The program was made for educational purposes.
-
-Compiled Windows and Linux applications with statically-linked libraries can be downloaded from [Releases](https://github.com/andre-wojtowicz/qt-sql-example/releases).
+SQL accessing GUI, including the function of accessing the SQLDatabase, monitoring the current status of the drive and delete/backup of the connected database.
 
 ![](screenshot.png)
 
-The application is developed with Qt 5.9.1 on Windows 10 and Ubuntu 16.04.
-The program was tested on MySQL Server 5.5.57 and Microsoft SQL Server 2008 R2 SP3.
-
-## Client config
-
-The program reads `config.ini` on startup. The file must be in the app working directory.
+The application is developed with Qt 5.13.1 on Windows 10 and Ubuntu 16.04.
+The program was tested on MySQL Server 5.5.57, Microsoft SQL Server 2008 R2 SP3 and PostgreSQL 11.
 
 ## SQL database drivers
 

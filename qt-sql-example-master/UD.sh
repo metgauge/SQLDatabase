@@ -1,0 +1,10 @@
+#!/bin/bash
+DOW=$(date +"%m_%d_%y")
+DB_INSTANCE="_DB_INSTANCE"
+DB_HOST="_DB_HOST"
+DB_USER="_DB_USER"
+DB_PASSWORD="_DB_PASSWORD"
+DB_STORAGE="_DB_STORAGE"
+export PGPASSWORD=$DB_PASSWORD
+#pg_dump -fD $DB_INSTANCE -j 4 -h $DB_HOST -U $DB_USER -f $DB_STORAGE/db_$DOW
+pg_dump  -h $DB_HOST -U $DB_USER -d $DB_INSTANCE -j 4  -Fd -f $DB_STORAGE/db_$DOW

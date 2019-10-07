@@ -108,7 +108,7 @@ void SQLWindow::connectToServerRequested()
 
     QString driver   = ui->lineEdit_driver->text(),
             server   = ui->lineEdit_server_address->text(),
-            database = ui->lineEdit_database_name->text(),
+            database = ui->comboBox_database->currentText(),
             login    = ui->lineEdit_login->text(),
             password = ui->lineEdit_password->text();
     int port = ui->spinBox_server_port->value();
@@ -229,12 +229,19 @@ void SQLWindow::serverConnected()
 void SQLWindow::fillTablesNames(QStringList tables_names)
 {
     if (tables_names.length() == 0)
+    {
         QMessageBox::warning(this,
                              "Tables",
                              "There are no tables to display in the database",
                              QMessageBox::Ok);
+        ui->button_show_table->setEnabled(false);
+        ui->button_show_table_old->setEnabled(false);
+    }
     else
     {
+        ui->button_show_table->setEnabled(true);
+        ui->button_show_table_old->setEnabled(true);
+
         ui->comboBox_table_name->addItems(tables_names);
 
         ui->comboBox_table_name->setEnabled(true);
@@ -462,7 +469,7 @@ void SQLWindow::dumpDb()
             {
                 return;
             }
-            text.replace(QString("_DB_INSTANCE"), ui->lineEdit_database_name->text());  // replace text in string
+            text.replace(QString("_DB_INSTANCE"), ui->comboBox_database->currentText());  // replace text in string
             text.replace(QString("_DB_HOST"), ui->lineEdit_server_address->text());     // replace text in string
             text.replace(QString("_DB_USER"), ui->lineEdit_login->text());              // replace text in string
             text.replace(QString("_DB_PASSWORD"), ui->lineEdit_password->text());       // replace text in string

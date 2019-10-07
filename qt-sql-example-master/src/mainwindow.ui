@@ -357,19 +357,6 @@
            <string>localhost</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_database_name">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>326</y>
-            <width>141</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>postgres</string>
-          </property>
-         </widget>
          <widget class="QLabel" name="label_database">
           <property name="geometry">
            <rect>
@@ -495,6 +482,26 @@
             <string>PostSQL</string>
            </property>
           </widget>
+         </widget>
+         <widget class="QComboBox" name="comboBox_database">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>326</y>
+            <width>61</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>SSD</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HDD</string>
+           </property>
+          </item>
          </widget>
         </widget>
        </item>
@@ -1365,7 +1372,6 @@ font: 12pt &quot;Agency FB&quot;;</string>
   <tabstop>lineEdit_login</tabstop>
   <tabstop>lineEdit_password</tabstop>
   <tabstop>radio_windows_authentication</tabstop>
-  <tabstop>lineEdit_database_name</tabstop>
   <tabstop>button_connect</tabstop>
  </tabstops>
  <resources>

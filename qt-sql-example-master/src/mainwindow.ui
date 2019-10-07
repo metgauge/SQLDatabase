@@ -33,7 +33,7 @@
    <item row="1" column="0">
     <widget class="QStatusBar" name="statusBar">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>1</horstretch>
        <verstretch>1</verstretch>
       </sizepolicy>
@@ -41,7 +41,7 @@
      <property name="minimumSize">
       <size>
        <width>50</width>
-       <height>0</height>
+       <height>15</height>
       </size>
      </property>
     </widget>
